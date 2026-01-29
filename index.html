@@ -6,197 +6,212 @@
 <title>WEB MENU DIGITAL</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f4f4f4;
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
 }
 
-/* HEADER */
-header{
-  background:#d32f2f;
-  color:#fff;
-  padding:20px;
-  text-align:center;
+header {
+  background: #d32f2f;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
 
-header h1{
-  margin:0;
-  font-size:22px;
+.categorias {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  overflow-x: auto;
+  background: #fff;
 }
 
-header p{
-  margin:8px 0 0;
-  font-size:14px;
+.categorias button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+  font-weight: bold;
 }
 
-/* STATUS */
-.status-loja{
-  text-align:center;
-  padding:10px;
-  font-weight:bold;
+.categorias button.ativo {
+  background: #d32f2f;
+  color: #fff;
 }
 
-.status-loja.aberto{background:#2ecc71;color:#000}
-.status-loja.fechado{background:#e74c3c;color:#fff}
-
-/* CATEGORIAS */
-.categorias{
-  display:flex;
-  gap:10px;
-  padding:10px;
-  overflow-x:auto;
-  background:#fff;
+.container {
+  padding: 15px;
 }
 
-.categorias button{
-  min-width:120px;
-  border:none;
-  border-radius:12px;
-  padding:10px;
-  font-weight:bold;
-  background:#eee;
+.produto {
+  background: white;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.categorias button.ativo{
-  background:#d32f2f;
-  color:#fff;
+.produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-/* CONTAINER */
-.container{padding:15px}
-
-/* PRODUTOS */
-.produto{
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-  margin-bottom:15px;
+.info {
+  padding: 10px;
 }
 
-.produto img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
+.qtd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
 }
 
-.info{padding:12px}
-
-.info h3{margin:0}
-.info p{font-size:14px;color:#555}
-
-.qtd{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:8px 0;
+.qtd button {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  background: #ddd;
+  border: none;
+  border-radius: 6px;
 }
 
-.qtd button{
-  width:32px;
-  height:32px;
-  border:none;
-  border-radius:6px;
-  font-size:18px;
+.add {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
 }
 
-.add{
-  width:100%;
-  padding:10px;
-  border:none;
-  border-radius:8px;
-  background:#d32f2f;
-  color:#fff;
-  font-weight:bold;
+.carrinho {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
-/* CARRINHO */
-.carrinho{
-  background:#fff;
-  border-radius:12px;
-  padding:12px;
-  margin-top:20px;
+.carrinho ul {
+  list-style: none;
+  padding: 0;
 }
 
-.carrinho ul{list-style:none;padding:0;margin:0}
-
-.carrinho li{
-  background:#f9f9f9;
-  border-radius:8px;
-  padding:10px;
-  margin-bottom:10px;
+.carrinho li {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-.controls{
-  display:flex;
-  gap:6px;
-  margin-top:6px;
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
 }
 
-.controls button{padding:4px 8px}
-
-.remove{background:#ff5252;color:#fff;border:none}
-
-.total-box{
-  text-align:center;
-  padding:10px;
-  font-size:18px;
-  background:#e8f5e9;
-  border-radius:8px;
+.controls button {
+  padding: 4px 8px;
 }
 
-/* FORM */
-input,select,textarea{
-  width:100%;
-  padding:8px;
-  margin-bottom:8px;
+.remove {
+  background: #ff5252;
+  color: white;
+  border: none;
 }
 
-.finalizar{
-  width:100%;
-  padding:14px;
-  background:green;
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  font-size:16px;
+.total-box {
+  margin-top: 10px;
+  padding: 10px;
+  background: #e8f5e9;
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
 }
 
-/* CARRINHO FLUTUANTE */
-.carrinho-flutuante{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#d32f2f;
-  color:#fff;
-  padding:12px 16px;
-  border-radius:50px;
-  display:flex;
-  gap:8px;
-  font-weight:bold;
-  cursor:pointer;
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
 }
 
-/* RODAPÉ */
-footer{
-  text-align:center;
-  padding:15px;
-  font-size:14px;
-  color:#777;
+.finalizar {
+  width: 100%;
+  padding: 14px;
+  background: green;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+}
+  .carrinho-flutuante {
+  position: fixed;        /* Fica preso na tela */
+  bottom: 20px;           /* Distância do fundo */
+  right: 20px;            /* Distância da direita */
+  background: #d32f2f;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50px;    /* Formato arredondado */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;          /* Fica acima de tudo */
+}
+
+.carrinho-flutuante span {
+  background: white;
+  color: #d32f2f;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+  .status-loja{
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.status-loja.aberto{
+  background: #2ecc71;
+  color: #000;
+}
+
+.status-loja.fechado{
+  background: #e74c3c;
+  color: #fff;
+}
+  .rodape {
+  margin-top: 30px;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
 }
 </style>
 </head>
 
 <body>
+  <!-- STATUS DA LOJA -->
+<div id="status-loja" class="status-loja aberto">
+  🟢 ABERTO – Aceitando pedidos
+</div>
 
 <header>
 <h1>HAMBURGUERIA ORIGINAL BURGUER</h1>
-<p>Peça online • Entrega rápida • WhatsApp</p>
+<p>
+Faça seu pedido online<br>
+Horário: 18h às 23h<br>
+Escolha os produtos, adicione ao carrinho<br>
+e envie direto pelo WhatsApp
+</p>
 </header>
-
-<div id="status-loja" class="status-loja aberto"></div>
 
 <div class="categorias">
 <button class="ativo" onclick="mostrarCategoria('hamburgueres',this)">🍔 Hambúrgueres</button>
@@ -213,7 +228,7 @@ footer{
 <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
 <div class="info">
 <h3>X-Burger</h3>
-<p>Hambúrguer artesanal e queijo</p>
+<p>Pão, hambúrguer artesanal, queijo e molho da casa</p>
 <strong>R$ 21,00</strong>
 <div class="qtd">
 <button onclick="diminuir('X-Burger')">−</button>
@@ -221,6 +236,21 @@ footer{
 <button onclick="aumentar('X-Burger')">+</button>
 </div>
 <button class="add" onclick="addComQtd('X-Burger',21)">Adicionar</button>
+</div>
+</div>
+  
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+<div class="info">
+<h3>X-Salada</h3>
+<p>Pão, hambúrguer, alface, tomate, queijo e maionese</p>
+<strong>R$ 18,00</strong>
+<div class="qtd">
+<button onclick="diminuir('X-Salada')">−</button>
+<span id="qtd-X-Salada">1</span>
+<button onclick="aumentar('X-Salada')">+</button>
+</div>
+<button class="add" onclick="addComQtd('X-Salada',18)">Adicionar</button>
 </div>
 </div>
 </div>
@@ -231,7 +261,7 @@ footer{
 <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5">
 <div class="info">
 <h3>Batata Tradicional</h3>
-<p>Crocante</p>
+<p>Batata frita crocante com sal especial</p>
 <strong>R$ 25,00</strong>
 <div class="qtd">
 <button onclick="diminuir('Batata Tradicional')">−</button>
@@ -241,9 +271,89 @@ footer{
 <button class="add" onclick="addComQtd('Batata Tradicional',25)">Adicionar</button>
 </div>
 </div>
+
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1604908177225-6c4d1b50c4c6">
+<div class="info">
+<h3>Batata Completa</h3>
+<p>Cheddar, bacon e molho especial</p>
+<strong>R$ 45,00</strong>
+<div class="qtd">
+<button onclick="diminuir('Batata Completa')">−</button>
+<span id="qtd-Batata Completa">1</span>
+<button onclick="aumentar('Batata Completa')">+</button>
+</div>
+<button class="add" onclick="addComQtd('Batata Completa',45)">Adicionar</button>
+</div>
+</div>
 </div>
 
-<!-- CARRINHO -->
+<!-- MASSAS -->
+<div id="massas" class="categoria" style="display:none">
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0">
+<div class="info">
+<h3>Macarrão na Chapa</h3>
+<p>Macarrão salteado com legumes</p>
+<strong>R$ 25,00</strong>
+<div class="qtd">
+<button onclick="diminuir('Macarrão na Chapa')">−</button>
+<span id="qtd-Macarrão na Chapa">1</span>
+<button onclick="aumentar('Macarrão na Chapa')">+</button>
+</div>
+<button class="add" onclick="addComQtd('Macarrão na Chapa',25)">Adicionar</button>
+</div>
+</div>
+
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc">
+<div class="info">
+<h3>Macarrão ao Molho</h3>
+<p>Molho vermelho artesanal</p>
+<strong>R$ 35,00</strong>
+<div class="qtd">
+<button onclick="diminuir('Macarrão ao Molho')">−</button>
+<span id="qtd-Macarrão ao Molho">1</span>
+<button onclick="aumentar('Macarrão ao Molho')">+</button>
+</div>
+<button class="add" onclick="addComQtd('Macarrão ao Molho',35)">Adicionar</button>
+</div>
+</div>
+</div>
+
+<!-- BEBIDAS -->
+<div id="bebidas" class="categoria" style="display:none">
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e">
+<div class="info">
+<h3>Coca-Cola Lata</h3>
+<p>350ml gelada</p>
+<strong>R$ 5,00</strong>
+<div class="qtd">
+<button onclick="diminuir('Coca Lata')">−</button>
+<span id="qtd-Coca Lata">1</span>
+<button onclick="aumentar('Coca Lata')">+</button>
+</div>
+<button class="add" onclick="addComQtd('Coca Lata',5)">Adicionar</button>
+</div>
+</div>
+
+<div class="produto">
+<img src="https://images.unsplash.com/photo-1610873167013-2dd675d30ef4">
+<div class="info">
+<h3>Coca-Cola 1L</h3>
+<p>Garrafa 1 litro</p>
+<strong>R$ 8,00</strong>
+<div class="qtd">
+<button onclick="diminuir('Coca 1L')">−</button>
+<span id="qtd-Coca 1L">1</span>
+<button onclick="aumentar('Coca 1L')">+</button>
+</div>
+<button class="add" onclick="addComQtd('Coca 1L',8)">Adicionar</button>
+</div>
+</div>
+</div>
+
 <div class="carrinho">
 <h3>Carrinho</h3>
 <ul id="lista"></ul>
@@ -255,13 +365,13 @@ footer{
 <input id="rua" placeholder="Rua">
 <input id="numero" placeholder="Número">
 <input id="bairro" placeholder="Bairro">
-<textarea id="obs" placeholder="Observações"></textarea>
-
+<input id="comp" placeholder="Complemento">
+<textarea id="obs" placeholder="Observações do pedido (ex: X-Burger sem cebola, batata bem passada)"></textarea>
 <select id="tipo-entrega">
-<option>Entrega</option>
-<option>Retirada</option>
+  <option value="Entrega">🛵 Entrega</option>
+  <option value="Retirada">🏪 Retirada no local</option>
 </select>
-
+  
 <select id="pagamento">
 <option>Dinheiro</option>
 <option>Pix</option>
@@ -272,14 +382,10 @@ footer{
 
 </div>
 
-<div class="carrinho-flutuante" onclick="document.querySelector('.carrinho').scrollIntoView({behavior:'smooth'})">
-🛒 <span id="itens-carrinho">0</span> | R$ <span id="total-carrinho">0</span>
-</div>
-
-<footer>⚡ Cardápio criado por <strong>Web Menu Digital</strong></footer>
-
 <script>
-let carrinho={},quantidades={},total=0;
+let carrinho = {};
+let quantidades = {};
+let total = 0;
 
 function mostrarCategoria(id,btn){
 document.querySelectorAll('.categoria').forEach(c=>c.style.display='none');
@@ -288,15 +394,24 @@ document.querySelectorAll('.categorias button').forEach(b=>b.classList.remove('a
 btn.classList.add('ativo');
 }
 
-function aumentar(n){quantidades[n]=(quantidades[n]||1)+1;document.getElementById("qtd-"+n).innerText=quantidades[n]}
-function diminuir(n){if((quantidades[n]||1)>1){quantidades[n]--;document.getElementById("qtd-"+n).innerText=quantidades[n]}}
+function aumentar(nome){
+quantidades[nome]=(quantidades[nome]||1)+1;
+document.getElementById("qtd-"+nome).innerText=quantidades[nome];
+}
 
-function addComQtd(n,p){
-let q=quantidades[n]||1;
-if(!carrinho[n]) carrinho[n]={preco:p,qtd:q};
-else carrinho[n].qtd+=q;
-quantidades[n]=1;
-document.getElementById("qtd-"+n).innerText=1;
+function diminuir(nome){
+if((quantidades[nome]||1)>1){
+quantidades[nome]--;
+document.getElementById("qtd-"+nome).innerText=quantidades[nome];
+}
+}
+
+function addComQtd(nome,preco){
+let qtd=quantidades[nome]||1;
+if(!carrinho[nome]) carrinho[nome]={preco,qtd};
+else carrinho[nome].qtd+=qtd;
+quantidades[nome]=1;
+document.getElementById("qtd-"+nome).innerText=1;
 render();
 }
 
@@ -308,36 +423,112 @@ for(let i in carrinho){
 let sub=carrinho[i].preco*carrinho[i].qtd;
 total+=sub;
 lista.innerHTML+=`
-<li><strong>${i}</strong> (${carrinho[i].qtd}x) - R$ ${sub}
+<li>
+<strong>${i}</strong> (${carrinho[i].qtd}x) - R$ ${sub}
 <div class="controls">
 <button onclick="alterarQtd('${i}',-1)">−</button>
 <button onclick="alterarQtd('${i}',1)">+</button>
 <button class="remove" onclick="delete carrinho['${i}'];render()">🗑️</button>
-</div></li>`;
+</div>
+</li>`;
 }
 document.getElementById("total").innerText=total;
-document.getElementById("itens-carrinho").innerText=Object.values(carrinho).reduce((a,b)=>a+b.qtd,0);
-document.getElementById("total-carrinho").innerText=total;
+  atualizarCarrinhoFlutuante();
 }
 
-function alterarQtd(n,d){carrinho[n].qtd+=d;if(carrinho[n].qtd<=0) delete carrinho[n];render()}
+function alterarQtd(nome,delta){
+carrinho[nome].qtd+=delta;
+if(carrinho[nome].qtd<=0) delete carrinho[nome];
+render();
+}
 
 function enviar(){
-if(Object.keys(carrinho).length===0){alert("Carrinho vazio");return}
-if(!nome.value||!rua.value||!numero.value){alert("Preencha os dados");return}
 
-let msg=`🍔 *NOVO PEDIDO*\n\n👤 ${nome.value}\n📍 ${rua.value}, ${numero.value}\n🚚 ${tipo-entrega.value}\n💳 ${pagamento.value}\n\n🛒 Pedido:\n`;
-for(let i in carrinho){msg+=`• ${i} (${carrinho[i].qtd}x)\n`}
-msg+=`\n💰 Total: R$ ${total}`;
+  // 🔒 VALIDAÇÕES
+  if(Object.keys(carrinho).length === 0){
+    alert("⚠️ Seu carrinho está vazio. Adicione pelo menos um item.");
+    return;
+  }
 
-window.open("https://wa.me/5534999060948?text="+encodeURIComponent(msg));
+  if(!nome.value.trim()){
+    alert("⚠️ Informe seu nome.");
+    return;
+  }
+
+  if(!rua.value.trim() || !numero.value.trim()){
+    alert("⚠️ Preencha rua e número.");
+    return;
+  }
+
+  // 📩 MENSAGEM WHATSAPP
+  let msg = `🍔 *NOVO PEDIDO*\n\n`;
+  msg += `👤 Nome: ${nome.value}\n`;
+  msg += `📍 Endereço: ${rua.value}, ${numero.value} - ${bairro.value}\n`;
+  msg += `🚚 Tipo: ${document.getElementById("tipo-entrega").value}\n`;
+  msg += `📦 Complemento: ${comp.value || "Não informado"}\n`;
+  msg += `💳 Pagamento: ${pagamento.value}\n`;
+  msg += `📝 Observações: ${obs.value || "Nenhuma"}\n\n`;
+  msg += `🛒 *Pedido:*\n`;
+
+  for(let item in carrinho){
+    msg += `• ${item} (${carrinho[item].qtd}x)\n`;
+  }
+
+  msg += `\n💰 *Total: R$ ${total}*`;
+
+  window.open(
+    "https://wa.me/5534999060948?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
+}
+  function atualizarCarrinhoFlutuante() {
+  let itens = 0;
+  let valor = 0;
+
+  for (let i in carrinho) {
+    itens += carrinho[i].qtd;
+    valor += carrinho[i].qtd * carrinho[i].preco;
+  }
+
+  document.getElementById("itens-carrinho").innerText = itens;
+  document.getElementById("total-carrinho").innerText = valor;
 }
 
-const h=new Date().getHours();
-const s=document.getElementById("status-loja");
-s.className="status-loja "+(h>=18&&h<23?"aberto":"fechado");
-s.innerText=h>=18&&h<23?"🟢 ABERTO – Aceitando pedidos":"🔴 FECHADO – Volte às 18h";
+function abrirCarrinho() {
+  document.querySelector(".carrinho")
+    .scrollIntoView({ behavior: "smooth" });
+}
+  const horarioAbertura = 18; // 18h
+const horarioFechamento = 23; // 23h
+
+function verificarStatusLoja(){
+  const agora = new Date().getHours();
+  const status = document.getElementById("status-loja");
+  const botaoWhats = document.getElementById("btn-finalizar"); // botão do pedido
+
+  if(agora >= horarioAbertura && agora < horarioFechamento){
+    status.className = "status-loja aberto";
+    status.innerText = "🟢 ABERTO – Aceitando pedidos";
+    if(botaoWhats) botaoWhats.disabled = false;
+  }else{
+    status.className = "status-loja fechado";
+    status.innerText = "🔴 FECHADO – Volte às 18h";
+    if(botaoWhats) botaoWhats.disabled = true;
+  }
+}
+
+verificarStatusLoja();
 </script>
 
+<!-- CARRINHO FLUTUANTE -->
+<div class="carrinho-flutuante" onclick="abrirCarrinho()">
+  🛒 Carrinho
+  <span id="itens-carrinho">0</span>
+  R$ <span id="total-carrinho">0</span>
+</div>
+  <footer class="rodape">
+  ⚡ Cardápio criado por <strong>Web Menu Digital</strong>
+</footer>
+  
 </body>
 </html>
