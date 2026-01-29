@@ -3,83 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Menu Digital</title>
+<title>WEB MENU DIGITAL</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial, sans-serif;
   background:#f4f4f4;
 }
-
-/* STATUS */
-.status{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  text-align:center;
-  padding:10px;
-  font-weight:bold;
-}
-.aberto{background:#2ecc71;color:#000}
-.fechado{background:#e74c3c;color:#fff}
 
 /* HEADER */
 header{
   background:#d32f2f;
   color:#fff;
+  padding:20px;
   text-align:center;
-  padding:20px 10px;
 }
-header h1{margin:0;font-size:22px}
-header p{margin:8px 0 0;font-size:14px}
 
-/* CATEGORIAS */
-.categorias{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  padding:12px;
-  background:#fff;
+header h1{
+  margin:0;
+  font-size:22px;
 }
-.cat{
-  background:#f8f8f8;
-  border-radius:12px;
-  overflow:hidden;
+
+header p{
+  margin:8px 0 0;
+  font-size:14px;
+}
+
+/* STATUS */
+.status-loja{
   text-align:center;
-  cursor:pointer;
-  border:2px solid transparent;
-}
-.cat.ativo{border-color:#d32f2f}
-.cat img{
-  width:100%;
-  height:90px;
-  object-fit:cover;
-}
-.cat span{
-  display:block;
-  padding:8px;
+  padding:10px;
   font-weight:bold;
 }
 
+.status-loja.aberto{background:#2ecc71;color:#000}
+.status-loja.fechado{background:#e74c3c;color:#fff}
+
+/* CATEGORIAS */
+.categorias{
+  display:flex;
+  gap:10px;
+  padding:10px;
+  overflow-x:auto;
+  background:#fff;
+}
+
+.categorias button{
+  min-width:120px;
+  border:none;
+  border-radius:12px;
+  padding:10px;
+  font-weight:bold;
+  background:#eee;
+}
+
+.categorias button.ativo{
+  background:#d32f2f;
+  color:#fff;
+}
+
+/* CONTAINER */
+.container{padding:15px}
+
 /* PRODUTOS */
-.container{padding:12px}
 .produto{
   background:#fff;
   border-radius:12px;
-  margin-bottom:15px;
   overflow:hidden;
+  margin-bottom:15px;
 }
+
 .produto img{
   width:100%;
   height:180px;
   object-fit:cover;
 }
-.info{padding:10px}
+
+.info{padding:12px}
+
 .info h3{margin:0}
 .info p{font-size:14px;color:#555}
-.preco{font-weight:bold;font-size:18px;margin:6px 0}
 
 .qtd{
   display:flex;
@@ -87,6 +93,7 @@ header p{margin:8px 0 0;font-size:14px}
   gap:10px;
   margin:8px 0;
 }
+
 .qtd button{
   width:32px;
   height:32px;
@@ -94,13 +101,15 @@ header p{margin:8px 0 0;font-size:14px}
   border-radius:6px;
   font-size:18px;
 }
+
 .add{
   width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
   background:#d32f2f;
   color:#fff;
-  border:none;
-  padding:10px;
-  border-radius:6px;
+  font-weight:bold;
 }
 
 /* CARRINHO */
@@ -110,20 +119,32 @@ header p{margin:8px 0 0;font-size:14px}
   padding:12px;
   margin-top:20px;
 }
-.carrinho ul{list-style:none;padding:0}
+
+.carrinho ul{list-style:none;padding:0;margin:0}
+
 .carrinho li{
-  background:#f7f7f7;
-  padding:8px;
+  background:#f9f9f9;
   border-radius:8px;
-  margin-bottom:6px;
-}
-.total{
-  background:#e8f5e9;
-  text-align:center;
-  font-size:18px;
   padding:10px;
+  margin-bottom:10px;
+}
+
+.controls{
+  display:flex;
+  gap:6px;
+  margin-top:6px;
+}
+
+.controls button{padding:4px 8px}
+
+.remove{background:#ff5252;color:#fff;border:none}
+
+.total-box{
+  text-align:center;
+  padding:10px;
+  font-size:18px;
+  background:#e8f5e9;
   border-radius:8px;
-  margin-top:10px;
 }
 
 /* FORM */
@@ -133,195 +154,189 @@ input,select,textarea{
   margin-bottom:8px;
 }
 
-/* FINALIZAR */
 .finalizar{
   width:100%;
   padding:14px;
   background:green;
   color:#fff;
   border:none;
-  font-size:16px;
   border-radius:8px;
+  font-size:16px;
 }
 
 /* CARRINHO FLUTUANTE */
-.carrinho-float{
+.carrinho-flutuante{
   position:fixed;
   bottom:20px;
   right:20px;
   background:#d32f2f;
   color:#fff;
   padding:12px 16px;
-  border-radius:40px;
+  border-radius:50px;
   display:flex;
-  gap:10px;
-  align-items:center;
+  gap:8px;
   font-weight:bold;
   cursor:pointer;
-  z-index:9999;
 }
 
 /* RODAPÉ */
 footer{
-  margin:30px 0;
   text-align:center;
-  color:#777;
+  padding:15px;
   font-size:14px;
+  color:#777;
 }
 </style>
 </head>
 
 <body>
 
-<div id="status" class="status aberto">🟢 ABERTO – Aceitando pedidos</div>
-
 <header>
 <h1>HAMBURGUERIA ORIGINAL BURGUER</h1>
-<p>Peça online • Receba rápido • WhatsApp</p>
+<p>Peça online • Entrega rápida • WhatsApp</p>
 </header>
 
+<div id="status-loja" class="status-loja aberto"></div>
+
 <div class="categorias">
-<div class="cat ativo" onclick="mostrar('burgers',this)">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
-<span>🍔 Hambúrgueres</span>
-</div>
-
-<div class="cat" onclick="mostrar('combos',this)">
-<img src="https://images.unsplash.com/photo-1606755962773-d324e6e1aa38">
-<span>🔥 Combos</span>
-</div>
-
-<div class="cat" onclick="mostrar('batatas',this)">
-<img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5">
-<span>🍟 Batatas</span>
-</div>
-
-<div class="cat" onclick="mostrar('bebidas',this)">
-<img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e">
-<span>🥤 Bebidas</span>
-</div>
+<button class="ativo" onclick="mostrarCategoria('hamburgueres',this)">🍔 Hambúrgueres</button>
+<button onclick="mostrarCategoria('batatas',this)">🍟 Batatas</button>
+<button onclick="mostrarCategoria('massas',this)">🍝 Massas</button>
+<button onclick="mostrarCategoria('bebidas',this)">🥤 Bebidas</button>
 </div>
 
 <div class="container">
 
-<div id="burgers" class="categoria">
-<!-- PRODUTO -->
+<!-- HAMBURGUERES -->
+<div id="hamburgueres" class="categoria">
 <div class="produto">
 <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
 <div class="info">
 <h3>X-Burger</h3>
-<p>Pão, hambúrguer artesanal, queijo e molho</p>
-<div class="preco">R$ 21,00</div>
-<button class="add" onclick="add('X-Burger',21)">Adicionar</button>
+<p>Hambúrguer artesanal e queijo</p>
+<strong>R$ 21,00</strong>
+<div class="qtd">
+<button onclick="diminuir('X-Burger')">−</button>
+<span id="qtd-X-Burger">1</span>
+<button onclick="aumentar('X-Burger')">+</button>
+</div>
+<button class="add" onclick="addComQtd('X-Burger',21)">Adicionar</button>
 </div>
 </div>
 </div>
 
-<div id="combos" class="categoria" style="display:none">
-<div class="produto">
-<img src="https://images.unsplash.com/photo-1606755962773-d324e6e1aa38">
-<div class="info">
-<h3>Combo Burger</h3>
-<p>X-Burger + Batata + Refri</p>
-<div class="preco">R$ 39,90</div>
-<button class="add" onclick="add('Combo Burger',39.9)">Adicionar</button>
-</div>
-</div>
-</div>
-
+<!-- BATATAS -->
 <div id="batatas" class="categoria" style="display:none">
 <div class="produto">
 <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5">
 <div class="info">
 <h3>Batata Tradicional</h3>
-<div class="preco">R$ 25,00</div>
-<button class="add" onclick="add('Batata',25)">Adicionar</button>
+<p>Crocante</p>
+<strong>R$ 25,00</strong>
+<div class="qtd">
+<button onclick="diminuir('Batata Tradicional')">−</button>
+<span id="qtd-Batata Tradicional">1</span>
+<button onclick="aumentar('Batata Tradicional')">+</button>
+</div>
+<button class="add" onclick="addComQtd('Batata Tradicional',25)">Adicionar</button>
 </div>
 </div>
 </div>
 
-<div id="bebidas" class="categoria" style="display:none">
-<div class="produto">
-<img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e">
-<div class="info">
-<h3>Coca Lata</h3>
-<div class="preco">R$ 5,00</div>
-<button class="add" onclick="add('Coca Lata',5)">Adicionar</button>
-</div>
-</div>
-</div>
-
+<!-- CARRINHO -->
 <div class="carrinho">
 <h3>Carrinho</h3>
 <ul id="lista"></ul>
-<div class="total">Total: R$ <span id="total">0</span></div>
+<div class="total-box">Total: R$ <span id="total">0</span></div>
 </div>
 
 <h3>Seus dados</h3>
 <input id="nome" placeholder="Nome">
-<select id="entrega">
-<option>🛵 Entrega</option>
-<option>🏪 Retirada</option>
+<input id="rua" placeholder="Rua">
+<input id="numero" placeholder="Número">
+<input id="bairro" placeholder="Bairro">
+<textarea id="obs" placeholder="Observações"></textarea>
+
+<select id="tipo-entrega">
+<option>Entrega</option>
+<option>Retirada</option>
 </select>
+
 <select id="pagamento">
 <option>Dinheiro</option>
 <option>Pix</option>
 <option>Cartão</option>
 </select>
 
-<button class="finalizar" onclick="enviar()">Enviar no WhatsApp</button>
+<button class="finalizar" onclick="enviar()">Enviar pedido no WhatsApp</button>
+
 </div>
 
-<div class="carrinho-float" onclick="document.querySelector('.carrinho').scrollIntoView({behavior:'smooth'})">
-🛒 <span id="qtd">0</span> | R$ <span id="total2">0</span>
+<div class="carrinho-flutuante" onclick="document.querySelector('.carrinho').scrollIntoView({behavior:'smooth'})">
+🛒 <span id="itens-carrinho">0</span> | R$ <span id="total-carrinho">0</span>
 </div>
 
-<footer>
-⚡ Cardápio criado por <strong>Web Menu Digital</strong>
-</footer>
+<footer>⚡ Cardápio criado por <strong>Web Menu Digital</strong></footer>
 
 <script>
-let carrinho={},total=0,itens=0;
+let carrinho={},quantidades={},total=0;
 
-function mostrar(id,el){
+function mostrarCategoria(id,btn){
 document.querySelectorAll('.categoria').forEach(c=>c.style.display='none');
 document.getElementById(id).style.display='block';
-document.querySelectorAll('.cat').forEach(c=>c.classList.remove('ativo'));
-el.classList.add('ativo');
+document.querySelectorAll('.categorias button').forEach(b=>b.classList.remove('ativo'));
+btn.classList.add('ativo');
 }
 
-function add(nome,preco){
-if(!carrinho[nome]) carrinho[nome]={preco,qtd:1};
-else carrinho[nome].qtd++;
+function aumentar(n){quantidades[n]=(quantidades[n]||1)+1;document.getElementById("qtd-"+n).innerText=quantidades[n]}
+function diminuir(n){if((quantidades[n]||1)>1){quantidades[n]--;document.getElementById("qtd-"+n).innerText=quantidades[n]}}
+
+function addComQtd(n,p){
+let q=quantidades[n]||1;
+if(!carrinho[n]) carrinho[n]={preco:p,qtd:q};
+else carrinho[n].qtd+=q;
+quantidades[n]=1;
+document.getElementById("qtd-"+n).innerText=1;
 render();
 }
 
 function render(){
-let lista=document.getElementById('lista');
-lista.innerHTML='';
-total=0;itens=0;
+let lista=document.getElementById("lista");
+lista.innerHTML="";
+total=0;
 for(let i in carrinho){
 let sub=carrinho[i].preco*carrinho[i].qtd;
-total+=sub;itens+=carrinho[i].qtd;
-lista.innerHTML+=`<li>${i} (${carrinho[i].qtd}x)</li>`;
+total+=sub;
+lista.innerHTML+=`
+<li><strong>${i}</strong> (${carrinho[i].qtd}x) - R$ ${sub}
+<div class="controls">
+<button onclick="alterarQtd('${i}',-1)">−</button>
+<button onclick="alterarQtd('${i}',1)">+</button>
+<button class="remove" onclick="delete carrinho['${i}'];render()">🗑️</button>
+</div></li>`;
 }
-document.getElementById('total').innerText=total.toFixed(2);
-document.getElementById('total2').innerText=total.toFixed(2);
-document.getElementById('qtd').innerText=itens;
+document.getElementById("total").innerText=total;
+document.getElementById("itens-carrinho").innerText=Object.values(carrinho).reduce((a,b)=>a+b.qtd,0);
+document.getElementById("total-carrinho").innerText=total;
 }
+
+function alterarQtd(n,d){carrinho[n].qtd+=d;if(carrinho[n].qtd<=0) delete carrinho[n];render()}
 
 function enviar(){
-let msg=`Pedido:%0A`;
-for(let i in carrinho){msg+=`- ${i}%0A`;}
-msg+=`%0ATotal: R$ ${total}`;
-window.open(`https://wa.me/5534999060948?text=${msg}`);
+if(Object.keys(carrinho).length===0){alert("Carrinho vazio");return}
+if(!nome.value||!rua.value||!numero.value){alert("Preencha os dados");return}
+
+let msg=`🍔 *NOVO PEDIDO*\n\n👤 ${nome.value}\n📍 ${rua.value}, ${numero.value}\n🚚 ${tipo-entrega.value}\n💳 ${pagamento.value}\n\n🛒 Pedido:\n`;
+for(let i in carrinho){msg+=`• ${i} (${carrinho[i].qtd}x)\n`}
+msg+=`\n💰 Total: R$ ${total}`;
+
+window.open("https://wa.me/5534999060948?text="+encodeURIComponent(msg));
 }
 
-const hora=new Date().getHours();
-if(hora<18||hora>=23){
-document.getElementById('status').className='status fechado';
-document.getElementById('status').innerText='🔴 FECHADO – Volte às 18h';
-}
+const h=new Date().getHours();
+const s=document.getElementById("status-loja");
+s.className="status-loja "+(h>=18&&h<23?"aberto":"fechado");
+s.innerText=h>=18&&h<23?"🟢 ABERTO – Aceitando pedidos":"🔴 FECHADO – Volte às 18h";
 </script>
 
 </body>
