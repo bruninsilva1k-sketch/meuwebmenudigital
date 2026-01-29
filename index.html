@@ -12,27 +12,45 @@ body {
   margin: 0;
 }
 
+/* HEADER NOVO */
 header {
   background: #d32f2f;
-  color: white;
-  padding: 20px;
+  color: #fff;
+  padding: 25px 15px;
   text-align: center;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+/* CATEGORIAS ESTILO APP */
 .categorias {
   display: flex;
-  gap: 8px;
-  padding: 10px;
+  gap: 12px;
+  padding: 15px;
   overflow-x: auto;
-  background: #fff;
+  background: #f5f5f5;
 }
 
 .categorias button {
-  padding: 8px 14px;
+  min-width: 140px;
+  padding: 14px 10px;
   border: none;
-  border-radius: 20px;
-  background: #eee;
+  border-radius: 14px;
+  background: #ffffff;
   font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .categorias button.ativo {
@@ -204,20 +222,29 @@ input, select, textarea {
 </div>
 
 <header>
-<h1>HAMBURGUERIA ORIGINAL BURGUER</h1>
-<p>
-Faça seu pedido online<br>
-Horário: 18h às 23h<br>
-Escolha os produtos, adicione ao carrinho<br>
-e envie direto pelo WhatsApp
-</p>
+  <h1>HAMBURGUERIA ORIGINAL BURGUER</h1>
+  <p>
+    Cardápio digital • Pedido rápido<br>
+    Entrega e retirada no local
+  </p>
 </header>
 
 <div class="categorias">
-<button class="ativo" onclick="mostrarCategoria('hamburgueres',this)">🍔 Hambúrgueres</button>
-<button onclick="mostrarCategoria('batatas',this)">🍟 Batatas</button>
-<button onclick="mostrarCategoria('massas',this)">🍝 Massas</button>
-<button onclick="mostrarCategoria('bebidas',this)">🥤 Bebidas</button>
+  <button class="ativo" onclick="mostrarCategoria('hamburgueres',this)">
+    🍔<br>Hambúrgueres
+  </button>
+
+  <button onclick="mostrarCategoria('batatas',this)">
+    🍟<br>Batatas
+  </button>
+
+  <button onclick="mostrarCategoria('massas',this)">
+    🍝<br>Massas
+  </button>
+
+  <button onclick="mostrarCategoria('bebidas',this)">
+    🥤<br>Bebidas
+  </button>
 </div>
 
 <div class="container">
