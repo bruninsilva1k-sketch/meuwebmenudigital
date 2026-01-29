@@ -262,7 +262,10 @@ input, select, textarea {
 <span id="qtd-X-Burger">1</span>
 <button onclick="aumentar('X-Burger')">+</button>
 </div>
-<button class="add" onclick="addComQtd('X-Burger',21)">🛒 Adicionar ao carrinho</button>
+event.target.innerText = "✔ Adicionado";
+setTimeout(() => {
+  event.target.innerText = "🛒 Adicionar ao carrinho";
+}, 1000);
 </div>
 </div>
   
