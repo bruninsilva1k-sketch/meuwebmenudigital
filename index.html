@@ -405,25 +405,32 @@ input, select, textarea {
 <div class="total-box">Total: R$ <span id="total">0</span></div>
 </div>
 
-<h3>Seus dados</h3>
-<input id="nome" placeholder="Nome">
-<input id="rua" placeholder="Rua">
-<input id="numero" placeholder="Número">
-<input id="bairro" placeholder="Bairro">
-<input id="comp" placeholder="Complemento">
-<textarea id="obs" placeholder="Observações do pedido (ex: X-Burger sem cebola, batata bem passada)"></textarea>
-<select id="tipo-entrega">
-  <option value="Entrega">🛵 Entrega</option>
-  <option value="Retirada">🏪 Retirada no local</option>
-</select>
-  
-<select id="pagamento">
-<option>Dinheiro</option>
-<option>Pix</option>
-<option>Cartão</option>
-</select>
+<button class="finalizar" onclick="abrirCheckout()">Finalizar pedido</button>
 
-<button class="finalizar" onclick="enviar()">Enviar pedido no WhatsApp</button>
+<div id="checkout" style="display:none; margin-top:15px;">
+  <h3>Seus dados</h3>
+
+  <input id="nome" placeholder="Nome">
+  <input id="rua" placeholder="Rua">
+  <input id="numero" placeholder="Número">
+  <input id="bairro" placeholder="Bairro">
+  <input id="comp" placeholder="Complemento">
+
+  <textarea id="obs" placeholder="Observações do pedido (ex: X-Burger sem cebola)"></textarea>
+
+  <select id="tipo-entrega">
+    <option value="Entrega">🛵 Entrega</option>
+    <option value="Retirada">🏪 Retirada no local</option>
+  </select>
+
+  <select id="pagamento">
+    <option>Dinheiro</option>
+    <option>Pix</option>
+    <option>Cartão</option>
+  </select>
+
+  <button class="finalizar" onclick="enviar()">Enviar pedido no WhatsApp</button>
+</div>
 
 </div>
 
@@ -563,6 +570,17 @@ function verificarStatusLoja(){
 }
 
 verificarStatusLoja();
+
+function abrirCheckout(){
+  if(Object.keys(carrinho).length === 0){
+    alert("⚠️ Adicione pelo menos um item antes de finalizar.");
+    return;
+  }
+
+  const checkout = document.getElementById("checkout");
+  checkout.style.display = "block";
+  checkout.scrollIntoView({ behavior: "smooth" });
+}
 </script>
 
 <!-- CARRINHO FLUTUANTE -->
