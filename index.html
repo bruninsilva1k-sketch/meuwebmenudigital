@@ -232,26 +232,23 @@ input, select, textarea {
   </p> 
 </header>
 
-<!-- HOME DE CATEGORIAS -->
-<section id="home-categorias">
+<div class="categorias">
+  <button class="ativo" onclick="mostrarCategoria('hamburgueres',this)">
+    🍔<br>Hambúrgueres
+  </button>
 
-  <div onclick="abrirCategoria('hamburgueres')">
-    🍔 Hambúrgueres
-  </div>
+  <button onclick="mostrarCategoria('batatas',this)">
+    🍟<br>Batatas
+  </button>
 
-  <div onclick="abrirCategoria('combos')">
-    🍟 Combos
-  </div>
+  <button onclick="mostrarCategoria('massas',this)">
+    🍝<br>Massas
+  </button>
 
-  <div onclick="abrirCategoria('batatas')">
-    🍟 Batatas
-  </div>
-
-  <div onclick="abrirCategoria('bebidas')">
-    🥤 Bebidas
-  </div>
-
-</section>
+  <button onclick="mostrarCategoria('bebidas',this)">
+    🥤<br>Bebidas
+  </button>
+</div>
 <div class="container">
 
 <!-- HAMBURGUERES -->
