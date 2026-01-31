@@ -7,26 +7,6 @@
 
 <style>
 body {
-  <section id="home-categorias">
-
-  <h2>Escolha uma categoria</h2>
-
-  <div onclick="abrirCategoria('hamburgueres')">
-    🍔 Hambúrgueres
-  </div>
-
-  <div onclick="abrirCategoria('combos')">
-    🍟 Combos
-  </div>
-
-  <div onclick="abrirCategoria('batatas')">
-    🍟 Batatas
-  </div>
-
-  <div onclick="abrirCategoria('bebidas')">
-    🥤 Bebidas
-  </div>
-
 </section>
   font-family: Arial, sans-serif;
   background: #f5f5f5;
@@ -252,23 +232,28 @@ input, select, textarea {
   </p> 
 </header>
 
-<div class="categorias">
-  <button class="ativo" onclick="mostrarCategoria('hamburgueres',this)">
-    🍔<br>Hambúrgueres
-  </button>
+</header>
 
-  <button onclick="mostrarCategoria('batatas',this)">
-    🍟<br>Batatas
-  </button>
+<!-- HOME DE CATEGORIAS -->
+<section id="home-categorias">
 
-  <button onclick="mostrarCategoria('massas',this)">
-    🍝<br>Massas
-  </button>
+  <div onclick="abrirCategoria('hamburgueres')">
+    🍔 Hambúrgueres
+  </div>
 
-  <button onclick="mostrarCategoria('bebidas',this)">
-    🥤<br>Bebidas
-  </button>
-</div>
+  <div onclick="abrirCategoria('combos')">
+    🍟 Combos
+  </div>
+
+  <div onclick="abrirCategoria('batatas')">
+    🍟 Batatas
+  </div>
+
+  <div onclick="abrirCategoria('bebidas')">
+    🥤 Bebidas
+  </div>
+
+</section>
 
 <div class="container">
 
