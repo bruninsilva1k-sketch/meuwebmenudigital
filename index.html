@@ -254,17 +254,17 @@ input, select, textarea {
 <!-- HAMBURGUERES -->
 <div id="hamburgueres" class="categoria">
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<img src="img/xburguer.jpg" alt="X-Burger">
 <div class="info">
 <h3>X-Burger</h3>
-<p>Pão, hambúrguer artesanal, queijo e molho da casa</p>
-<strong>R$ 21,00</strong>
+<p>Pão brioche, hambúrguer artesanal, queijo cheddar e molho da casa</p>
+<strong>R$ 20,00</strong>
 <div class="qtd">
 <button onclick="diminuir('X-Burger')">−</button>
 <span id="qtd-X-Burger">1</span>
 <button onclick="aumentar('X-Burger')">+</button>
 </div>
-<button class="add" onclick="addComQtd('X-Burger',21)">
+<button class="add" onclick="addComQtd('X-Burger',20)">
   🛒 Adicionar ao pedido
 </button> 
   <span class="destaque">🔥 Mais pedido da casa</span>
@@ -272,27 +272,63 @@ input, select, textarea {
 </div>
   
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+<img src="img/xsalada.jpg" alt="X-Salada">
 <div class="info">
 <h3>X-Salada</h3>
-<p>Pão, hambúrguer, alface, tomate, queijo e maionese</p>
-<strong>R$ 18,00</strong>
+<p>Pão brioche, hambúrguer, alface, tomate, queijo cheddar e maionese</p>
+<strong>R$ 24,00</strong>
 <div class="qtd">
 <button onclick="diminuir('X-Salada')">−</button>
 <span id="qtd-X-Salada">1</span>
 <button onclick="aumentar('X-Salada')">+</button>
 </div>
-<button class="add" onclick="addComQtd('X-Salada',18)">
+<button class="add" onclick="addComQtd('X-Salada',24)">
   🛒 Adicionar ao pedido
 </button>
 </div>
 </div>
 </div>
 
+  <div class="produto">
+<img src="img/xbacon.jpg" alt="X-Bacon">
+<div class="info">
+<h3>X-Bacon</h3>
+<p>Pão Brioche, hambúrguer artesanal, bacon, alface, tomate, queijo cheddar e maionese</p>
+<strong>R$ 26,00</strong>
+<div class="qtd">
+<button onclick="diminuir('X-Bacon')">−</button>
+<span id="qtd-X-Bacon">1</span>
+<button onclick="aumentar('X-Bacon')">+</button>
+</div>
+<button class="add" onclick="addComQtd('X-Bacon',26)">
+  🛒 Adicionar ao pedido
+</button>
+</div>
+</div>
+</div>
+
+  <div class="produto">
+<img src="img/xtudo.jpg" alt="X-Tudo">
+<div class="info">
+<h3>X-Tudo</h3>
+<p>Pão brioche, hambúrguer artesanal, bacon, presunto, ovo, pickles, alface, tomate, queijo cheddar e maionese</p>
+<strong>R$ 40,00</strong>
+<div class="qtd">
+<button onclick="diminuir('X-Tudo')">−</button>
+<span id="qtd-X-Tudo">1</span>
+<button onclick="aumentar('X-Tudo')">+</button>
+</div>
+<button class="add" onclick="addComQtd('X-Tudo',40)">
+  🛒 Adicionar ao pedido
+</button>
+</div>
+</div>
+</div>
+  
 <!-- BATATAS -->
 <div id="batatas" class="categoria" style="display:none">
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5">
+<img src="img/batata.jpg" alt="Batata Tradicional">
 <div class="info">
 <h3>Batata Tradicional</h3>
 <p>Batata frita crocante com sal especial</p>
@@ -308,11 +344,29 @@ input, select, textarea {
 </div>
 </div>
 
+  <div class="produto">
+<img src="img/batata-cheddar.jpg" alt="Batata Com Cheddar">
+<div class="info">
+<h3>Batata Com Cheddar</h3>
+<p>Batata crocante e Cheddar</p>
+<strong>R$ 30,00</strong>
+<div class="qtd">
+<button onclick="diminuir('Batata E Cheddar')">−</button>
+<span id="qtd-Batata Com Cheddar">1</span>
+<button onclick="aumentar('Batata Com Cheddar')">+</button>
+</div>
+<button class="add" onclick="addComQtd('Batata Com Cheddar',30)">
+  🛒 Adicionar ao pedido
+</button>
+</div>
+</div>
+</div>
+
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1604908177225-6c4d1b50c4c6">
+<img src="img/batata-completa.jpg" alt="Batata Completa">
 <div class="info">
 <h3>Batata Completa</h3>
-<p>Cheddar, bacon e molho especial</p>
+<p>Batata crocante, Cheddar, bacon e molho especial</p>
 <strong>R$ 45,00</strong>
 <div class="qtd">
 <button onclick="diminuir('Batata Completa')">−</button>
@@ -329,7 +383,7 @@ input, select, textarea {
 <!-- COMBOS -->
 <div id="combos" class="categoria" style="display:none">
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0">
+<img src="img/comboxburguer.jpg" alt="Combo X Burguer">
 <div class="info">
 <h3>Macarrão na Chapa</h3>
 <p>Macarrão salteado com legumes</p>
@@ -346,7 +400,7 @@ input, select, textarea {
 </div>
 
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc">
+<img src="img/comboxsalada.jpg" alt="X-Burger">
 <div class="info">
 <h3>Macarrão ao Molho</h3>
 <p>Molho vermelho artesanal</p>
@@ -366,7 +420,7 @@ input, select, textarea {
 <!-- BEBIDAS -->
 <div id="bebidas" class="categoria" style="display:none">
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e">
+<img src="img/cocalata.jpg" alt="Coca Cola Lata">
 <div class="info">
 <h3>Coca-Cola Lata</h3>
 <p>350ml gelada</p>
@@ -383,7 +437,7 @@ input, select, textarea {
 </div>
 
 <div class="produto">
-<img src="https://images.unsplash.com/photo-1610873167013-2dd675d30ef4">
+<img src="img/cocalitro.jpg" alt="Coca Cola Litro">
 <div class="info">
 <h3>Coca-Cola 1L</h3>
 <p>Garrafa 1 litro</p>
